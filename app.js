@@ -7,7 +7,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.get('/', (req, res) => {
-    res.send('hi')
+    res.sendFile(__dirname + '/index.html')
 });
 
 app.use('/api/whoami', whoami);

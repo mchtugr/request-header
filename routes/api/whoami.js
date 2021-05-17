@@ -9,7 +9,7 @@ router.get('/test', (req, res) => {
 });
 
 router.get('/', (req, res) => {
-    const ipaddress = requestIp.getClientIp(req);     
+    const ipaddress = req.headers['x-forwarded-for'];   
     const language = req.headers["accept-language"];
     const software = req.headers["user-agent"];
     res.json({
